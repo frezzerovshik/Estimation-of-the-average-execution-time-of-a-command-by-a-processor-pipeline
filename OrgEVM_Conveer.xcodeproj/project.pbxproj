@@ -12,7 +12,7 @@
 		3277CFF12372BDB5002DC60B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3277CFF02372BDB5002DC60B /* Assets.xcassets */; };
 		3277CFF42372BDB5002DC60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3277CFF22372BDB5002DC60B /* Main.storyboard */; };
 		3277CFF72372BDB5002DC60B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3277CFF62372BDB5002DC60B /* main.m */; };
-		3277D0032372BE1D002DC60B /* Conveer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3277D0022372BE1D002DC60B /* Conveer.m */; };
+		3277D0032372BE1D002DC60B /* ASpipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3277D0022372BE1D002DC60B /* ASpipeline.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		3277CFF52372BDB5002DC60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3277CFF62372BDB5002DC60B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3277CFF82372BDB5002DC60B /* OrgEVM_Conveer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrgEVM_Conveer.entitlements; sourceTree = "<group>"; };
-		3277D0012372BE10002DC60B /* Conveer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Conveer.h; sourceTree = "<group>"; };
-		3277D0022372BE1D002DC60B /* Conveer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Conveer.m; sourceTree = "<group>"; };
+		3277D0012372BE10002DC60B /* ASpipeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASpipeline.h; sourceTree = "<group>"; };
+		3277D0022372BE1D002DC60B /* ASpipeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASpipeline.m; sourceTree = "<group>"; };
 		3277D0042372BE37002DC60B /* typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,8 +77,8 @@
 		3277CFFE2372BDBE002DC60B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3277D0012372BE10002DC60B /* Conveer.h */,
-				3277D0022372BE1D002DC60B /* Conveer.m */,
+				3277D0012372BE10002DC60B /* ASpipeline.h */,
+				3277D0022372BE1D002DC60B /* ASpipeline.m */,
 				3277D0042372BE37002DC60B /* typedef.h */,
 			);
 			name = Model;
@@ -172,7 +172,7 @@
 			files = (
 				3277CFEF2372BDB1002DC60B /* ViewController.m in Sources */,
 				3277CFF72372BDB5002DC60B /* main.m in Sources */,
-				3277D0032372BE1D002DC60B /* Conveer.m in Sources */,
+				3277D0032372BE1D002DC60B /* ASpipeline.m in Sources */,
 				3277CFEC2372BDB1002DC60B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

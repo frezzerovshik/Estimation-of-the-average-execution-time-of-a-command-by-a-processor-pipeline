@@ -8,8 +8,11 @@
 
 #pragma once
 #import <Foundation/Foundation.h>
-
-@interface Conveer: NSObject
+#import "typedef.h"
+@interface ASpipeline: NSObject
 -(instancetype) initConveer;
 -(void) timeEstimateCalculation;
++(NSUInteger) calcFirstCom: (COM) command;
++(NSUInteger) calcSecondCom: (COM) command;
++(NSUInteger) calcThirdCom: (COM) command;
 @end

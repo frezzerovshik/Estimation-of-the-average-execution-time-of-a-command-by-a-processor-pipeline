@@ -7,33 +7,29 @@
 //
 
 
-#import "Conveer.h"
-#import "typedef.h"
-@interface Conveer()
+#import "ASpipeline.h"
+@interface ASpipeline()
 @property (nonatomic,assign) NSMutableArray* commands;
-@property (nonatomic,assign) NSUInteger countClockMicrocommands;
-@property (nonatomic,assign) NSUInteger stateFirstCom;
-@property (nonatomic,assign) NSUInteger stateSecondCom;
-@property (nonatomic,assign) NSUInteger stateThirdCom;
+@property (nonatomic,assign) CGFloat timeEstimate;
 @end
 
-@implementation Conveer
+@implementation ASpipeline
 
 -(instancetype) initConveer{
     self = [super init];
     if(self){
+        _timeEstimate = 0;
         COM temp_commands[3];
-        int iterator_cmd = 1;
-        int iterator_addr = 1;
-        int typeCommands[10] = {0 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1};
-        int _typeAddr[10] = {0 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 };
-        for(int i = 0;i<3;++i){
+        NSUInteger iterator_cmd = 1;
+        NSUInteger iterator_addr = 1;
+        NSUInteger typeCommands[10] = {0 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1};
+        NSUInteger _typeAddr[10] = {0 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 };
+        for(NSUInteger i = 0;i<3;++i){
             temp_commands[i].cop = typeCommands[rand()%10];
             typeCommands[iterator_cmd] = 1;
             iterator_cmd++;
             typeCommands[iterator_cmd] = 1;
             temp_commands[i].typeAddr_1 = _typeAddr[rand()%10];
-            temp_commands[i].typeAddr_2 = _typeAddr[rand()%10];
             if(i == 0){
                 _typeAddr[iterator_addr] = 1;
                 iterator_addr++;
@@ -47,19 +43,34 @@
             }
               [_commands addObject:[NSValue valueWithBytes:&temp_commands[i] objCType:@encode(COM)]];
         }
-        _countClockMicrocommands = 0;
-        _stateFirstCom=_stateSecondCom=_stateThirdCom = 0;
     }
     return self;
+}
++(NSUInteger) calcFirstCom:(COM)command{
+    NSUInteger res = 0;
+    return res;
+}
++(NSUInteger) calcSecondCom:(COM)command{
+    NSUInteger res = 1;
+    return res;
+}
++(NSUInteger) calcThirdCom:(COM)command{
+    NSUInteger res = 2;
+    return res;
 }
 -(void) timeEstimateCalculation{
     COM tmp[3] ;
     [[_commands objectAtIndex:0] getValue:&tmp[0]];
     [[_commands objectAtIndex:1] getValue:&tmp[1]];
     [[_commands objectAtIndex:2] getValue:&tmp[2]];
-    BOOL is_finished = NO;
-    while (is_finished == NO){
-        /*Моделирование работы конвеера, расписать на листочке во избежание багосов*/
-    }
+    CGFloat timeFirstComm = 0;
+    CGFloat timeSecondComm = 0;
+    CGFloat timeThirdComm = 0;
+    timeFirstComm = [ASpipeline calcFirstCom:tmp[0]];
+    timeSecondComm = [ASpipeline calcSecondCom:tmp[1]];
+    timeThirdComm = [ASpipeline calcThirdCom:tmp[2]];
+    _timeEstimate = (timeFirstComm+timeSecondComm+timeThirdComm)/3;
+    NSLog(@"Оценка среднего времени выполнения команды на конвейере процессора при данных входных: %f" , _timeEstimate);
+    
 }
 @end
