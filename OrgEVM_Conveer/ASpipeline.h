@@ -11,8 +11,7 @@
 #import "typedef.h"
 @interface ASpipeline: NSObject
 -(instancetype) initConveer;
--(void) timeEstimateCalculation;
-+(NSUInteger) calcFirstCom: (COM) command;
-+(NSUInteger) calcSecondCom: (COM) command;
-+(NSUInteger) calcThirdCom: (COM) command;
+-(float) timeEstimateCalculation;
++(NSUInteger) calcComWithNum:(NSUInteger) num and: (COM) command;
+
 @end

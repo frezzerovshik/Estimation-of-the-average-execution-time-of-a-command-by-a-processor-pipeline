@@ -11,5 +11,13 @@
 typedef struct COM{
     NSUInteger cop;
     NSUInteger typeAddr_1;
-    
+    NSUInteger typeAddr_2;
 }COM;
+
+typedef struct STATE_SET{
+    NSUInteger read;
+    NSUInteger firstOperandSelection;
+    NSUInteger secondOperandSelection;
+    NSUInteger execute;
+    NSUInteger write;
+}STATE_SET;
